@@ -67,7 +67,11 @@ export class TaskService {
 
   deleteTask(task: Task): void {
     this.tasks.splice(this.tasks.indexOf(task), 1);
-    console.log(this.tasks);
+    this.tasksSubject.next(this.tasks.slice());
+  }
+
+  updateTask(task: Task, newTask: Task) {
+    this.tasks[this.tasks.indexOf(task)] = newTask;
     this.tasksSubject.next(this.tasks.slice());
   }
 }

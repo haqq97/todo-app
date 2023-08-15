@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
 import { Task } from '../task.model';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { TaskEditModalComponent } from '../task-edit-modal/task-edit-modal.component';
 
 @Component({
   selector: 'app-task-list',
@@ -9,8 +11,12 @@ import { Task } from '../task.model';
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
+  modalRef: BsModalRef;
 
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit(): void {
     this.taskService.getAllTasks().subscribe((tasks) => {
@@ -26,7 +32,11 @@ export class TaskListComponent implements OnInit {
     this.taskService.deleteTask(task);
   }
 
-  openModal(task: Task) {
-    console.log(task);
+  openEditModal(task: Task) {
+    this.modalRef = this.modalService.show(TaskEditModalComponent, {
+      initialState: { task },
+      class: 'modal-dialog-centered',
+      animated: true,
+    });
   }
 }

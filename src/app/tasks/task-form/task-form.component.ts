@@ -28,7 +28,6 @@ export class TaskFormComponent implements OnInit {
 
   onSubmit() {
     if (this.taskForm.valid) {
-      console.log(this.taskForm.value);
       this.taskService.addTask(this.taskForm.value);
       this.formCompleted.emit('Completed');
       this.taskForm.reset();

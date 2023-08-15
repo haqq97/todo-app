@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { TaskEditModalComponent } from './tasks/task-edit-modal/task-edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     TaskListComponent,
     TaskFormComponent,
     EventFormComponent,
+    TaskEditModalComponent,
   ],
   imports: [
     BrowserModule,

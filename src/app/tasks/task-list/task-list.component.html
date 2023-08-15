@@ -1,7 +1,7 @@
 <div
   *ngFor="let task of tasks"
   class="task-item mb-3 p-3"
-  (click)="openModal(task)"
+  (click)="openEditModal(task)"
 >
   <i class="fa-regular fa-square-check fa-xl" (click)="deleteTask(task)"></i>
   <div class="text-center">
