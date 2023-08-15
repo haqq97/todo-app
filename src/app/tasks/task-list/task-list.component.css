@@ -1,0 +1,24 @@
+.task-item {
+  border-radius: 5px;
+  background-color: #aecbe8;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  color: #001f3f;
+  background-color: #6188af;
+}
+
+.task-item:hover .fa-square-check {
+  display: inline-block;
+  color: rgb(114, 230, 168);
+}
+
+.fa-square-check {
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+}
+.task-item:hover .fa-square-check:hover {
+  color: rgb(63, 121, 90);
+}

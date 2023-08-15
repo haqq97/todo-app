@@ -1,0 +1,28 @@
+<div
+  *ngFor="let task of tasks"
+  class="task-item mb-3 p-3"
+  (click)="openModal(task)"
+>
+  <i class="fa-regular fa-square-check fa-xl" (click)="deleteTask(task)"></i>
+  <div class="text-center">
+    <h4>{{ task.title }}</h4>
+    <p *ngIf="task.dueDate" class="text-danger fw-medium">
+      Deadline: {{ task.dueDate | date }}
+    </p>
+  </div>
+  <i *ngIf="task.category === 'work'" class="fa-solid fa-briefcase me-2"></i>
+  <i
+    *ngIf="task.category === 'shopping'"
+    class="fa-solid fa-cart-shopping me-2"
+  ></i>
+  <i
+    *ngIf="task.category === 'birthday'"
+    class="fa-solid fa-cake-candles me-2"
+  ></i>
+  <i
+    *ngIf="task.category === 'event'"
+    class="fa-solid fa-calendar-days me-2"
+  ></i>
+  <i *ngIf="task.category === 'school'" class="fa-solid fa-book me-2"></i>
+  <span>{{ task.category }}</span>
+</div>
