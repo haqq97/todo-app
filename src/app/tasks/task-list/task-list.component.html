@@ -1,4 +1,5 @@
 <div
+  [@fadeOut]
   *ngFor="let task of tasks"
   class="task-item mb-3 p-3"
   (click)="openEditModal(task)"

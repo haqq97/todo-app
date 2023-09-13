@@ -3,11 +3,17 @@ import { TaskService } from '../task.service';
 import { Task } from '../task.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { TaskEditModalComponent } from '../task-edit-modal/task-edit-modal.component';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css'],
+  animations: [
+    trigger('fadeOut', [
+      transition(':leave', [animate('0.5s ease-in', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
