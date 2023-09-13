@@ -45,4 +45,26 @@ export class TaskListComponent implements OnInit {
       animated: true,
     });
   }
+
+  getColorStyle(task: Task): object {
+    let backgroundColor = '';
+
+    switch (task.category) {
+      case 'work':
+        backgroundColor = 'lightblue';
+        break;
+      case 'shopping':
+        backgroundColor = 'yellow';
+        break;
+      case 'birthday':
+        backgroundColor = 'lightpink';
+        break;
+      // Add more cases for other categories
+      default:
+        backgroundColor = 'white';
+        break;
+    }
+
+    return { 'background-color': backgroundColor };
+  }
 }

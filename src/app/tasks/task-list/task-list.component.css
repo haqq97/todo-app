@@ -11,7 +11,7 @@
 
 .task-item:hover .fa-square-check {
   display: inline-block;
-  color: rgb(114, 230, 168);
+  color: rgb(67, 134, 99);
 }
 
 .fa-square-check {
@@ -20,5 +20,5 @@
   position: absolute;
 }
 .task-item:hover .fa-square-check:hover {
-  color: rgb(63, 121, 90);
+  color: rgb(7, 67, 35);
 }
